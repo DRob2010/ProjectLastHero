@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cxsec0xeejaxl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7r7j"]
+size = Vector2(40, 40)
+
+[node name="Wall" type="StaticBody2D" unique_id=1645878039]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=629736390]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.000288231, 0.20748612, 0.00054633216, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067854518]
+shape = SubResource("RectangleShape2D_w7r7j")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=2067053984]
+vertices = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
+affect_navigation_mesh = true
+carve_navigation_mesh = true

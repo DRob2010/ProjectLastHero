@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://oot0aslc6aeq"]
+
+[ext_resource type="Texture2D" uid="uid://ikm1y1bje80k" path="res://art/firestarter.png" id="1_3xcoo"]
+[ext_resource type="Script" uid="uid://bril11vr4ha18" path="res://scripts/firestarter.gd" id="1_lgocn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lgocn"]
+radius = 9.0
+height = 40.0
+
+[node name="firestarter" type="Area2D" unique_id=483008715]
+script = ExtResource("1_lgocn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1429295648]
+position = Vector2(1.4210848e-14, -2)
+rotation = 3.1415927
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_3xcoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2083350956]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_lgocn")
+debug_color = Color(0.94509804, 0.19607843, 0.34509805, 0.41960785)

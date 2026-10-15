@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c7q566fbfxycg"]
+
+[ext_resource type="Texture2D" uid="uid://dqy84lpc4nnag" path="res://art/player_arrow.png" id="1_jfxcc"]
+[ext_resource type="Script" uid="uid://6t02ww81dvdi" path="res://scripts/arrow.gd" id="1_x2gei"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x2gei"]
+radius = 5.0
+height = 56.0
+
+[node name="arrow" type="Area2D" unique_id=11056428]
+script = ExtResource("1_x2gei")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1201891415]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_jfxcc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=352420637]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_x2gei")
+debug_color = Color(0.94509804, 0.19607843, 0.34509805, 0.41960785)

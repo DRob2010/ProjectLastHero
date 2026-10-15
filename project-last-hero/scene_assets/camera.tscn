@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cn8v7832t20yi"]
+
+[ext_resource type="Script" uid="uid://cblfkwvg8kodw" path="res://scripts/camera.gd" id="1_u5kg4"]
+
+[node name="Camera2D" type="Camera2D" unique_id=1863182631]
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+script = ExtResource("1_u5kg4")

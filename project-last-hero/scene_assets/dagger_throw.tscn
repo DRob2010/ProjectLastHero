@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cag671oxgiyra"]
+
+[ext_resource type="Script" uid="uid://bgqgjryglo60o" path="res://scripts/dagger_throw.gd" id="1_af4b3"]
+[ext_resource type="Texture2D" uid="uid://b4wxsb3x8rhix" path="res://art/theif_dagger.png" id="2_buj86"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_48exn"]
+radius = 9.0
+height = 36.0
+
+[node name="daggerThrow" type="Area2D" unique_id=307928029 groups=["attack_collision"]]
+script = ExtResource("1_af4b3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=588007472]
+position = Vector2(0, 15)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_buj86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=751526362]
+shape = SubResource("CapsuleShape2D_48exn")
+debug_color = Color(0.94509804, 0.19607843, 0.34509805, 0.41960785)

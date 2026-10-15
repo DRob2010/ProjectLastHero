@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dw6fhoidli5mc"]
+
+[ext_resource type="Texture2D" uid="uid://bftour3dhqgd6" path="res://art/logs.png" id="1_c8ftf"]
+[ext_resource type="Script" uid="uid://bemqhkltud8ou" path="res://scripts/camp.gd" id="1_ujbfx"]
+[ext_resource type="Texture2D" uid="uid://ikm1y1bje80k" path="res://art/firestarter.png" id="2_ujbfx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4glj6"]
+
+[node name="Camp" type="Area2D" unique_id=1306746103]
+script = ExtResource("1_ujbfx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1871836539]
+position = Vector2(0, 34)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_c8ftf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=310492532]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_ujbfx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1418152882]
+position = Vector2(0, 4)
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_4glj6")

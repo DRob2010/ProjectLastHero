@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bm47l3g5nn0vn"]
+
+[ext_resource type="Script" uid="uid://dd35hge2peylm" path="res://scripts/lightning_chain.gd" id="1_cdovj"]
+[ext_resource type="Texture2D" uid="uid://c4e0gbuyxn30c" path="res://art/lightning_chain.png" id="2_5yoku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6te5k"]
+size = Vector2(17, 38)
+
+[node name="lightning_chain" type="Area2D" unique_id=1442297463]
+z_index = -1
+script = ExtResource("1_cdovj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2055258730]
+position = Vector2(0, 6.0000014)
+scale = Vector2(0.1, 0.076)
+texture = ExtResource("2_5yoku")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=605917389]
+position = Vector2(-3.5, 6)
+shape = SubResource("RectangleShape2D_6te5k")
+debug_color = Color(0.94509804, 0.19607843, 0.34509805, 0.41960785)

@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://c74qkiqingw3t"]
+
+[ext_resource type="Script" uid="uid://b50lptfav4bqm" path="res://scripts/player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://cx8u7cdxacra5" path="res://art/player_sword.png" id="2_8tqnb"]
+[ext_resource type="Texture2D" uid="uid://ck2bb7yjtpxte" path="res://art/player_shield.png" id="3_yi08t"]
+[ext_resource type="Texture2D" uid="uid://cyehymxh37mfh" path="res://art/player_bow.png" id="4_7tutb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsoxx"]
+size = Vector2(42, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tutb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi08t"]
+size = Vector2(113.333336, 420)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=51253564]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_4flbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=319242171]
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=1996467410]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.003921569, 0.70980394, 0.007843138, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1445978703]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hsoxx")
+
+[node name="followPoints" type="Node2D" parent="." unique_id=1756670620]
+
+[node name="pos1" type="Marker2D" parent="followPoints" unique_id=921420605]
+position = Vector2(55, 40)
+
+[node name="Area2D" type="Area2D" parent="followPoints/pos1" unique_id=185698209]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="followPoints/pos1/Area2D" unique_id=1500116704]
+shape = SubResource("RectangleShape2D_7tutb")
+debug_color = Color(0.52216196, 0.5612123, 0.3494273, 0.41960785)
+
+[node name="pos2" type="Marker2D" parent="followPoints" unique_id=1360540330]
+position = Vector2(-55, 40)
+
+[node name="Area2D" type="Area2D" parent="followPoints/pos2" unique_id=310316733]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="followPoints/pos2/Area2D" unique_id=1194279751]
+shape = SubResource("RectangleShape2D_7tutb")
+debug_color = Color(0.52216196, 0.5612123, 0.3494273, 0.41960785)
+
+[node name="pos3" type="Marker2D" parent="followPoints" unique_id=1767338882]
+position = Vector2(55, -40)
+
+[node name="Area2D" type="Area2D" parent="followPoints/pos3" unique_id=2005135729]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="followPoints/pos3/Area2D" unique_id=939888598]
+shape = SubResource("RectangleShape2D_7tutb")
+debug_color = Color(0.52216196, 0.5612123, 0.3494273, 0.41960785)
+
+[node name="pos4" type="Marker2D" parent="followPoints" unique_id=2110771132]
+position = Vector2(-55, -40)
+
+[node name="Area2D" type="Area2D" parent="followPoints/pos4" unique_id=1910209721]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="followPoints/pos4/Area2D" unique_id=870331365]
+shape = SubResource("RectangleShape2D_7tutb")
+debug_color = Color(0.52216196, 0.5612123, 0.3494273, 0.41960785)
+
+[node name="sword" type="Node2D" parent="." unique_id=1231047181]
+position = Vector2(27, -2)
+scale = Vector2(1, 1.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="sword" unique_id=738063420]
+position = Vector2(-5.9604645e-08, -14)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_8tqnb")
+
+[node name="Area2D" type="Area2D" parent="sword" unique_id=732356484]
+position = Vector2(0, -14)
+scale = Vector2(0.1, 0.1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sword/Area2D" unique_id=1110613531]
+position = Vector2(3.3333333, -29.230774)
+shape = SubResource("RectangleShape2D_yi08t")
+debug_color = Color(0.9449024, 0.1958085, 0.3446031, 0.41960785)
+
+[node name="shield" type="Node2D" parent="." unique_id=402316990]
+position = Vector2(-22, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="shield" unique_id=1802675957]
+rotation = -1.5707964
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_yi08t")
+
+[node name="Area2D" type="Area2D" parent="shield" unique_id=1639892225]
+scale = Vector2(0.1, 0.1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shield/Area2D" unique_id=206854528]
+position = Vector2(-3.3333282, 5.722046e-06)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_yi08t")
+debug_color = Color(0.28340608, 0.62078863, 0.33404607, 0.41960785)
+
+[node name="bow" type="Node2D" parent="." unique_id=1400006296]
+position = Vector2(0, -20)
+
+[node name="Sprite2D" type="Sprite2D" parent="bow" unique_id=691589233]
+position = Vector2(0.6666667, 0)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("4_7tutb")
+
+[node name="rest" type="Label" parent="." unique_id=647717339]
+visible = false
+offset_left = 3.3333335
+offset_top = -76.0
+offset_right = 153.33333
+offset_bottom = -53.0
+text = "Press Pause to Rest"

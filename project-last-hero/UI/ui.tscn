@@ -1,0 +1,406 @@
+[gd_scene format=3 uid="uid://70uw1bsscg30"]
+
+[ext_resource type="Script" uid="uid://csm6poa6hfhp" path="res://scripts/ui.gd" id="1_ui"]
+[ext_resource type="Texture2D" uid="uid://bwbmcafvgmwu7" path="res://art/spell_wheel.png" id="2_dajm1"]
+[ext_resource type="Texture2D" uid="uid://dw47mrssa46no" path="res://art/player_quiver.png" id="2_hat8c"]
+[ext_resource type="Texture2D" uid="uid://bcgqhob5udykm" path="res://art/spell_wheel_exhaust.png" id="3_e6gg6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_msqxa"]
+bg_color = Color(0.13561687, 0.13561687, 0.13561687, 1)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 3
+border_width_bottom = 2
+border_color = Color(0.5876064, 0.4542058, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 3.0
+expand_margin_top = 2.0
+expand_margin_right = 3.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fwl4"]
+bg_color = Color(0.48567986, 0.11667154, 0.09809253, 1)
+border_width_left = 3
+border_width_bottom = 10
+border_color = Color(0.31363767, 0.062493123, 0.04915519, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dajm1"]
+bg_color = Color(0.18428022, 0.20234036, 0.6053093, 1)
+border_width_left = 3
+border_width_bottom = 10
+border_color = Color(0.08453647, 0.095022924, 0.33266956, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_marker"]
+bg_color = Color(1, 0.85, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="UI" type="CanvasLayer" unique_id=2072062772]
+script = ExtResource("1_ui")
+spell_wheel_center_offset = Vector2(-200, -200)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2056320381]
+offset_right = 114.0
+offset_bottom = 82.0
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=286438790]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1431809675]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer" unique_id=1300741189]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Health" type="ProgressBar" parent="HBoxContainer/VBoxContainer" unique_id=1549083495]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_msqxa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2fwl4")
+value = 100.0
+show_percentage = false
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/VBoxContainer" unique_id=1728101119]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Mana" type="ProgressBar" parent="HBoxContainer/VBoxContainer" unique_id=2110430523]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_msqxa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dajm1")
+max_value = 10.0
+step = 1.0
+value = 10.0
+show_percentage = false
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer" unique_id=1160369188]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1594691202]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("2_hat8c")
+expand_mode = 3
+
+[node name="arrows_remaining" type="Label" parent="HBoxContainer" unique_id=672732974]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "X 15"
+
+[node name="SpellWheel" type="GridContainer" parent="." unique_id=115810760]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -948.0
+offset_bottom = 204.0
+grow_horizontal = 2
+rotation = 0.7853982
+scale = Vector2(0.9928812, 1.0013727)
+pivot_offset = Vector2(0, 300)
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="SpellWheel" unique_id=1217968837]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_dajm1")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="SpellWheel" unique_id=1829682808]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_dajm1")
+expand_mode = 1
+flip_h = true
+
+[node name="TextureRect3" type="TextureRect" parent="SpellWheel" unique_id=4805953]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_dajm1")
+expand_mode = 1
+flip_v = true
+
+[node name="TextureRect4" type="TextureRect" parent="SpellWheel" unique_id=2048024893]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_dajm1")
+expand_mode = 1
+flip_h = true
+flip_v = true
+
+[node name="SpellWheelInfo" type="GridContainer" parent="." unique_id=922144498]
+z_index = 2
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -948.0
+offset_bottom = 204.0
+grow_horizontal = 2
+rotation = 0.7853982
+pivot_offset = Vector2(0, 300)
+mouse_filter = 2
+columns = 2
+
+[node name="SpellSlot1" type="Control" parent="SpellWheelInfo" unique_id=588788202]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Sprite" type="TextureRect" parent="SpellWheelInfo/SpellSlot1" unique_id=588788203]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Text" type="Label" parent="SpellWheelInfo/SpellSlot1" unique_id=588788204]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.89087
+offset_top = -7.7781677
+offset_right = 38.89087
+offset_bottom = 20.221832
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.7853982
+pivot_offset = Vector2(20, -20)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Firestarter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpellSlot2" type="Control" parent="SpellWheelInfo" unique_id=588788205]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Sprite" type="TextureRect" parent="SpellWheelInfo/SpellSlot2" unique_id=588788206]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Text" type="Label" parent="SpellWheelInfo/SpellSlot2" unique_id=944362576]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.2239
+offset_top = -26.162949
+offset_right = -22.62027
+offset_bottom = 25.837051
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.7853982
+pivot_offset = Vector2(20, -20)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -4
+theme_override_font_sizes/font_size = 20
+text = "Lightning Chain"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SpellSlot3" type="Control" parent="SpellWheelInfo" unique_id=588788208]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Sprite" type="TextureRect" parent="SpellWheelInfo/SpellSlot3" unique_id=588788209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Text" type="Label" parent="SpellWheelInfo/SpellSlot3" unique_id=1313318147]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 57.275635
+offset_top = -50.42993
+offset_right = 7.4314575
+offset_bottom = 1.5700684
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.7853982
+pivot_offset = Vector2(20, -20)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -4
+theme_override_font_sizes/font_size = 20
+text = "Cold
+Pillar"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SpellSlot4" type="Control" parent="SpellWheelInfo" unique_id=588788211]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Sprite" type="TextureRect" parent="SpellWheelInfo/SpellSlot4" unique_id=588788212]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Text" type="Label" parent="SpellWheelInfo/SpellSlot4" unique_id=1528451059]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0517578e-05
+offset_top = -45.52191
+offset_right = 3.0517578e-05
+offset_bottom = -17.521912
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.7853982
+pivot_offset = Vector2(20, -20)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Stone Wall"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpellWheelOverlay" type="GridContainer" parent="." unique_id=1429789596]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -948.0
+offset_bottom = 204.0
+grow_horizontal = 2
+rotation = 0.7853982
+pivot_offset = Vector2(0, 300)
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="SpellWheelOverlay" unique_id=2017640338]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("3_e6gg6")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="SpellWheelOverlay" unique_id=1732172274]
+visible = false
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("3_e6gg6")
+expand_mode = 1
+flip_h = true
+
+[node name="TextureRect3" type="TextureRect" parent="SpellWheelOverlay" unique_id=1545500554]
+visible = false
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("3_e6gg6")
+expand_mode = 1
+flip_v = true
+
+[node name="TextureRect4" type="TextureRect" parent="SpellWheelOverlay" unique_id=1093702679]
+visible = false
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("3_e6gg6")
+expand_mode = 1
+flip_h = true
+flip_v = true
+
+[node name="SpellWheelMarker" type="Panel" parent="." unique_id=922144499]
+z_index = 3
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_marker")
+
+[node name="PauseMenu" type="VBoxContainer" parent="." unique_id=688388199]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu" unique_id=1222761410]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Game Paused"
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu" unique_id=1095265704]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PauseMenu" unique_id=472448051]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Button3")
+focus_neighbor_bottom = NodePath("../Button2")
+theme_override_font_sizes/font_size = 30
+text = "Save"
+
+[node name="Button2" type="Button" parent="PauseMenu" unique_id=1620081952]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Button")
+focus_neighbor_bottom = NodePath("../Button3")
+theme_override_font_sizes/font_size = 30
+text = "Return"
+
+[node name="Button3" type="Button" parent="PauseMenu" unique_id=1918364857]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Button2")
+focus_neighbor_bottom = NodePath("../Button")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="RestFade" type="ColorRect" parent="." unique_id=2070080001]
+visible = false
+process_mode = 3
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

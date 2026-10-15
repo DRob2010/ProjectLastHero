@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c1ru8g83j2qp8"]
+
+[ext_resource type="Script" uid="uid://bvh45163vfoo2" path="res://scripts/test_damage_area.gd" id="1_lqpx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrvqu"]
+size = Vector2(40, 40)
+
+[node name="test_damage_area" type="Node2D" unique_id=1118763441]
+script = ExtResource("1_lqpx8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=77014365]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.4403531, 1.0287948e-06, 1.2032687e-07, 1)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=967920957]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=193452158]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_rrvqu")
+debug_color = Color(0.94509804, 0.19607843, 0.34509805, 0.41960785)

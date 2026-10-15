@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bufe327g16jet"]
+
+[ext_resource type="Script" uid="uid://jcn3guqs6xdx" path="res://scripts/fairy.gd" id="1_pvr7m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmgay"]
+size = Vector2(42, 42)
+
+[node name="fairy" type="CharacterBody2D" unique_id=1282737136]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_pvr7m")
+
+[node name="Aura" type="ColorRect" parent="." unique_id=1285975465]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Aura2" type="ColorRect" parent="." unique_id=1384760260]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -31.6
+offset_right = 45.0
+offset_bottom = 13.4
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.7853982
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=336889933]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5513999, 0.4690444, 0.23161054, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1878355190]
+shape = SubResource("RectangleShape2D_gmgay")

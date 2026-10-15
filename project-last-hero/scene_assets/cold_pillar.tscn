@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://kjgx746dr6qf"]
+
+[ext_resource type="Texture2D" uid="uid://q0fypl1ktcsh" path="res://art/cold_pillar.png" id="1_ioltd"]
+[ext_resource type="Script" uid="uid://dv4xcfjcd8481" path="res://scripts/cold_pillar.gd" id="1_llokr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llokr"]
+size = Vector2(19.25, 19.75)
+
+[node name="ColdPillar" type="Area2D" unique_id=25069310]
+script = ExtResource("1_llokr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=639299073]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ioltd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=581583672]
+position = Vector2(0.5, 4.5)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_llokr")
+debug_color = Color(0.94509804, 0.19607843, 0.34509805, 0.41960785)

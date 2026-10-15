@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://nysmsd0s1gyn"]
+
+[ext_resource type="Script" uid="uid://b287mnr35xubq" path="res://scripts/theif_enemy.gd" id="1_apl0m"]
+[ext_resource type="Texture2D" uid="uid://b4wxsb3x8rhix" path="res://art/theif_dagger.png" id="2_apl0m"]
+[ext_resource type="Texture2D" uid="uid://07sohj6dmp4c" path="res://art/shine.png" id="3_48exn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6t5v"]
+size = Vector2(42, 42)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_48exn"]
+radius = 5.9699078
+height = 23.557987
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apl0m"]
+size = Vector2(42, 20)
+
+[node name="theif_enemy" type="CharacterBody2D" unique_id=1476722361 groups=["enemies"]]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_apl0m")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1476722362]
+path_desired_distance = 8.0
+target_desired_distance = 36.0
+radius = 28.0
+
+[node name="effect" type="ColorRect" parent="." unique_id=1956600947]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.333334
+offset_top = -21.333334
+offset_right = 23.666666
+offset_bottom = 23.666666
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=294737751]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.5
+offset_top = -19.5
+offset_right = 20.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13803378, 0.13803375, 0.13803375, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=9140836]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_s6t5v")
+
+[node name="daggerThrust" type="Area2D" parent="." unique_id=1187360184 groups=["attack_collision"]]
+position = Vector2(21, 0)
+rotation = -0.4533422
+
+[node name="Sprite2D" type="Sprite2D" parent="daggerThrust" unique_id=57999888]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_apl0m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="daggerThrust" unique_id=1302774168]
+position = Vector2(-0.099853516, -9.689114)
+shape = SubResource("CapsuleShape2D_48exn")
+debug_color = Color(0.94509804, 0.19607843, 0.34509805, 0.41960785)
+
+[node name="shine" type="Sprite2D" parent="daggerThrust" unique_id=1506496072]
+position = Vector2(1.9132943, -16.865658)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_48exn")
+
+[node name="daggerThrow" type="Area2D" parent="." unique_id=2056422897]
+position = Vector2(-21, -4.7683716e-07)
+rotation = 2.687807
+
+[node name="Sprite2D" type="Sprite2D" parent="daggerThrow" unique_id=1088792708]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_apl0m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="daggerThrow" unique_id=1759546105]
+position = Vector2(-0.09555754, -9.6891575)
+shape = SubResource("CapsuleShape2D_48exn")
+disabled = true
+debug_color = Color(0.94509804, 0.19607843, 0.34509805, 0.41960785)
+
+[node name="shine" type="Sprite2D" parent="daggerThrow" unique_id=1378353085]
+position = Vector2(1.9132943, -16.865658)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_48exn")
+
+[node name="attackArea" type="Area2D" parent="." unique_id=29952052]
+position = Vector2(0, -30.000002)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackArea" unique_id=1610156274]
+position = Vector2(1, -5)
+scale = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_apl0m")
+debug_color = Color(0.44975835, 0.4428408, 0.42408663, 0.41960785)

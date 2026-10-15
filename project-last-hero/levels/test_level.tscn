@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://ryrsupp6k7e6"]
+
+[ext_resource type="PackedScene" uid="uid://c74qkiqingw3t" path="res://scene_assets/player.tscn" id="1_x25rp"]
+[ext_resource type="PackedScene" uid="uid://cn8v7832t20yi" path="res://scene_assets/camera.tscn" id="2_gmgay"]
+[ext_resource type="PackedScene" uid="uid://cxsec0xeejaxl" path="res://scene_assets/wall.tscn" id="3_gmgay"]
+[ext_resource type="PackedScene" uid="uid://bufe327g16jet" path="res://scene_assets/fairy.tscn" id="4_w7r7j"]
+[ext_resource type="PackedScene" uid="uid://70uw1bsscg30" path="res://UI/ui.tscn" id="5_o6mel"]
+[ext_resource type="PackedScene" uid="uid://nysmsd0s1gyn" path="res://scene_assets/theif_enemy.tscn" id="7_ur00s"]
+[ext_resource type="PackedScene" uid="uid://dw6fhoidli5mc" path="res://scene_assets/camp.tscn" id="7_wndkh"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_e7anx"]
+vertices = PackedVector2Array(-3430, -816, -3430, -916, -1143.6016, -1285.3984, -343.79688, -1329.6016, -1751.2031, -369, -2626, -369, -1143.6016, -2570.5078, 1802.3984, -2570.5078, -343, -1330, 1802.3984, -1330, 1079, -1330, 1079, -1230, 1802.3984, -1230, 1802.3984, -62, 1079, -62, 477, 38, 1079, 38, -1751.2031, 867.5078, 477, -62, -234.20313, -62, -234.20313, -1230, 477, -1230, 477, -1330, -343, -1329.6016, -4141.203, -916, -4141.203, -2084, -3430, -2084, -1784.3984, -1285.3984, -4250, -2184, -4250, -2183.6016, -4250.797, -2183.6016, -4756.3984, -2570.5078, -4250.797, -832.39844, -4250, -832.39844, -4250, -816, -343.79688, 21.601563, -343, 21.601563, -343, 38, 1802.3984, 38, 1802.3984, 867.5078, -2626, -269, -1860.7969, -269, -1860.7969, 867.5078, -3054.6016, 867.5078, -3054.6016, 239.39844, -3695.3984, 239.39844, -3695.3984, 867.5078, -4756.3984, 867.5078, -1784.3984, -2570.5078, -3430, -2184)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(2, 6, 7, 8, 3), PackedInt32Array(7, 9, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(15, 14, 16, 17), PackedInt32Array(14, 15, 18, 11), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(11, 18, 21, 10), PackedInt32Array(10, 21, 22, 7), PackedInt32Array(8, 23, 3), PackedInt32Array(1, 24, 25, 26, 27), PackedInt32Array(28, 29, 30, 31), PackedInt32Array(32, 33, 34), PackedInt32Array(35, 36, 37), PackedInt32Array(16, 38, 39, 17), PackedInt32Array(37, 15, 17), PackedInt32Array(37, 17, 4, 35), PackedInt32Array(3, 35, 4), PackedInt32Array(40, 41, 42, 43, 44), PackedInt32Array(45, 46, 47, 34), PackedInt32Array(0, 5, 40, 44, 45, 34), PackedInt32Array(34, 47, 31, 32), PackedInt32Array(30, 32, 31), PackedInt32Array(28, 31, 48, 49), PackedInt32Array(49, 48, 27, 26), PackedInt32Array(7, 22, 8), PackedInt32Array(1, 27, 2)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-6201, -3344, 3125, -3335, 3096, 1261, -6008, 1290)])
+
+[node name="TestLevel" type="Node2D" unique_id=886799896]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1703200348]
+navigation_polygon = SubResource("NavigationPolygon_e7anx")
+
+[node name="Wall" parent="NavigationRegion2D" unique_id=1645878039 instance=ExtResource("3_gmgay")]
+position = Vector2(2598, -832)
+scale = Vector2(39.28, 89.9)
+
+[node name="Wall2" parent="NavigationRegion2D" unique_id=1687351328 instance=ExtResource("3_gmgay")]
+position = Vector2(-1499, 1320.0001)
+scale = Vector2(240.99998, 22.12473)
+
+[node name="Wall3" parent="NavigationRegion2D" unique_id=480610022 instance=ExtResource("3_gmgay")]
+position = Vector2(-5552, -832)
+scale = Vector2(39.28, 89.9)
+
+[node name="Wall4" parent="NavigationRegion2D" unique_id=803352794 instance=ExtResource("3_gmgay")]
+position = Vector2(-1499, -3023.0002)
+scale = Vector2(240.99998, 22.12473)
+
+[node name="Wall5" parent="NavigationRegion2D" unique_id=1791197396 instance=ExtResource("3_gmgay")]
+position = Vector2(1489, -12)
+scale = Vector2(20, 2)
+
+[node name="Wall6" parent="NavigationRegion2D" unique_id=257875774 instance=ExtResource("3_gmgay")]
+position = Vector2(67.00012, -12)
+scale = Vector2(20, 2)
+
+[node name="Wall7" parent="NavigationRegion2D" unique_id=1479703421 instance=ExtResource("3_gmgay")]
+position = Vector2(-289.00003, -654)
+scale = Vector2(2.2400014, 33.28)
+
+[node name="Wall8" parent="NavigationRegion2D" unique_id=115872972 instance=ExtResource("3_gmgay")]
+position = Vector2(1488.9999, -1280)
+scale = Vector2(20, 2)
+
+[node name="Wall9" parent="NavigationRegion2D" unique_id=2044071388 instance=ExtResource("3_gmgay")]
+position = Vector2(67, -1280)
+scale = Vector2(20, 2)
+
+[node name="Wall10" parent="NavigationRegion2D" unique_id=1210564109 instance=ExtResource("3_gmgay")]
+position = Vector2(-1806.0002, 301)
+scale = Vector2(2.24, 33)
+
+[node name="Wall11" parent="NavigationRegion2D" unique_id=1601585935 instance=ExtResource("3_gmgay")]
+position = Vector2(-1464, -1961.0001)
+scale = Vector2(15.520001, 33.28)
+
+[node name="Wall12" parent="NavigationRegion2D" unique_id=634526649 instance=ExtResource("3_gmgay")]
+position = Vector2(-2216, -319)
+scale = Vector2(20, 2)
+
+[node name="Wall13" parent="NavigationRegion2D" unique_id=995856108 instance=ExtResource("3_gmgay")]
+position = Vector2(-3840, -866)
+scale = Vector2(20, 2)
+
+[node name="Wall14" parent="NavigationRegion2D" unique_id=286988335 instance=ExtResource("3_gmgay")]
+position = Vector2(-4196, -1508)
+scale = Vector2(2.2400014, 33.28)
+
+[node name="Wall15" parent="NavigationRegion2D" unique_id=1604754209 instance=ExtResource("3_gmgay")]
+position = Vector2(-3840, -2134)
+scale = Vector2(20, 2)
+
+[node name="Wall16" parent="NavigationRegion2D" unique_id=1309316719 instance=ExtResource("3_gmgay")]
+position = Vector2(-3375, 914.9999)
+scale = Vector2(15.520001, 33.28)
+
+[node name="Camp" parent="." unique_id=1306746103 instance=ExtResource("7_wndkh")]
+position = Vector2(1564, 638)
+
+[node name="Camp2" parent="." unique_id=1800318404 instance=ExtResource("7_wndkh")]
+position = Vector2(-4537, -2405)
+
+[node name="player" parent="." unique_id=51253564 instance=ExtResource("1_x25rp")]
+position = Vector2(960, 540)
+
+[node name="fairy" parent="." unique_id=1282737136 instance=ExtResource("4_w7r7j")]
+position = Vector2(1043, 601)
+collision_layer = 32768
+collision_mask = 32768
+max_distance_from_player = 250.0
+
+[node name="Text" type="Node2D" parent="." unique_id=879997375]
+position = Vector2(1255, 0)
+
+[node name="Label" type="Label" parent="Text" unique_id=401221103]
+offset_top = 73.0
+offset_right = 40.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 20
+text = "Learn how to play --->
+Move with WASD"
+
+[node name="Label2" type="Label" parent="Text" unique_id=865316439]
+offset_left = 743.0
+offset_top = 73.0
+offset_right = 952.0
+offset_bottom = 101.0
+theme_override_font_sizes/font_size = 20
+text = "Keyboard Controls
+
+-Attack- J key or Left Click
+-Shield/Focus- Hold K key or Right Click
+-Swap Weapon- Q key
+-Spell Wheel- E key, Move Mouse
+-Cast Spell- Attack While Spell Selected
+-Pause- Tab or Esc"
+
+[node name="UI" parent="." unique_id=2072062772 instance=ExtResource("5_o6mel")]
+
+[node name="Camera2D" parent="." unique_id=1863182631 instance=ExtResource("2_gmgay")]
+position = Vector2(960, 540)
+target_path = NodePath("../player")
+
+[node name="theif_enemy" parent="." unique_id=1476722361 instance=ExtResource("7_ur00s")]
+position = Vector2(766, -643)
+
+[node name="theif_enemy2" parent="." unique_id=138036952 instance=ExtResource("7_ur00s")]
+position = Vector2(-1284, 463)
+
+[node name="theif_enemy3" parent="." unique_id=1924634100 instance=ExtResource("7_ur00s")]
+position = Vector2(-1147, -788)
+
+[node name="theif_enemy4" parent="." unique_id=226734796 instance=ExtResource("7_ur00s")]
+position = Vector2(-621, -2339)
+
+[node name="theif_enemy5" parent="." unique_id=1940303347 instance=ExtResource("7_ur00s")]
+position = Vector2(1551, -2272)
+
+[node name="theif_enemy6" parent="." unique_id=1261602854 instance=ExtResource("7_ur00s")]
+position = Vector2(-3624, -1328)
+
+[node name="theif_enemy7" parent="." unique_id=1661811679 instance=ExtResource("7_ur00s")]
+position = Vector2(-2142, -2205)
+
+[node name="theif_enemy8" parent="." unique_id=2144055765 instance=ExtResource("7_ur00s")]
+position = Vector2(-4461, 593)
+
+[node name="theif_enemy9" parent="." unique_id=1973698466 instance=ExtResource("7_ur00s")]
+position = Vector2(-2757, 649)

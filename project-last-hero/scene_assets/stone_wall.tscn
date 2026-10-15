@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bdxkf2cuxljkf"]
+
+[ext_resource type="Script" uid="uid://bi68tj4jhybr3" path="res://scripts/stone_wall.gd" id="1_mkmli"]
+[ext_resource type="Texture2D" uid="uid://cgk5bu7x2rcdw" path="res://art/stone_wall.png" id="2_sovd2"]
+
+[node name="stone_wall" type="StaticBody2D" unique_id=1783310591]
+z_index = 0
+script = ExtResource("1_mkmli")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=743401441]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sovd2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1316096465]
+position = Vector2(-85, -12)
+polygon = PackedVector2Array(0, 0, 169, 0, 195, 41, 196, 56, 194, 77, 165, 73, 166, 61, 150, 33, 20, 33, 3, 61, 5, 73, -24, 77, -25, 66, -26, 41)
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1316096466]
+position = Vector2(-85, -12)
+vertices = PackedVector2Array(0, 0, 169, 0, 195, 41, 196, 56, 194, 77, 165, 73, 166, 61, 150, 33, 20, 33, 3, 61, 5, 73, -24, 77, -25, 66, -26, 41)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
